@@ -1,0 +1,24 @@
+version: '3.0'
+services:
+  barista1-service:
+    build: ./barista1
+    ports:
+      - 81:80
+    volumes:
+      - barista1-vol:/usr/local/apache2/htdocs
+  finance1-service:
+    build: ./finance1
+    ports:
+      - 82:80
+    volumes:
+      - finance1-vol:/usr/local/apache2/htdocs
+  health1-service:
+    build: ./health1
+    ports:
+      - 83:80
+    volumes:
+      - health1-vol:/usr/local/apache2/htdocs
+volumes:
+    barista1-vol:
+    health1-vol:
+    finance1-vol:
